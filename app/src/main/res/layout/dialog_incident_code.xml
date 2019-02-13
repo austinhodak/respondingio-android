@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#212121" android:id="@+id/constraintLayout">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/appBarLayout"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="Editing Code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView" android:textColor="#FFF"
+                    android:fontFamily="@font/roboto_bold" android:textSize="18sp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="3dp"
+          app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+          android:background="@drawable/bottom_shadow" android:elevation="5dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" app:srcCompat="@drawable/ic_done_black_24dp"
+            android:id="@+id/codeSaveFAB"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:backgroundTint="#66BB6A"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/linearLayout" android:paddingTop="8dp"
+                android:paddingBottom="72dp"
+                android:clipToPadding="false"
+                android:paddingLeft="8dp" android:paddingRight="8dp">
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:background="@drawable/timeline_round"
+                    android:backgroundTint="@color/md_grey_850"
+                    app:timeline_position="first"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="#FFF"
+                        android:text="This is the code that comes from the 911 center dispatch text. \nMatch Exactly codes will be matched first, then non-match exactly codes."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="12dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="12dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="12dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        app:boxCornerRadiusBottomEnd="5dp"
+                        app:boxCornerRadiusBottomStart="5dp"
+                        android:theme="@style/TextInputLayoutAppearance"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        android:hint="If Code Contains"
+                        android:layout_width="match_parent"
+                        app:hintTextColor="@color/md_grey_200"
+                        android:paddingTop="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp" android:id="@+id/textInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editCodeDispatchCode"
+                            android:paddingBottom="24dp"
+                            android:background="@android:color/transparent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Switch
+                        android:text="Match Exact"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editCodeMatchExactSwitch"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="12dp" android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp" app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                        android:layout_marginTop="8dp"/>
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="8dp"
+                    app:timeline_position="middle"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="line">
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:background="@drawable/timeline_round"
+                    android:backgroundTint="@color/md_grey_850"
+                    app:timeline_position="middle"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="12sp"
+                        android:textColor="#FFF"
+                        android:text="User facing code, leave blank if same as dispatch code."
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="12dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="12dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="12dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        app:boxCornerRadiusBottomEnd="5dp"
+                        app:boxCornerRadiusBottomStart="5dp"
+                        android:theme="@style/TextInputLayoutAppearance"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        android:hint="User Facing Code"
+                        android:layout_width="match_parent"
+                        app:hintTextColor="@color/md_grey_200"
+                        android:paddingTop="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editCodeUserText"
+                            android:paddingBottom="24dp"
+                            android:background="@android:color/transparent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="8dp"
+                    app:timeline_position="middle"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="line">
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:background="@drawable/timeline_round"
+                    android:backgroundTint="@color/md_grey_850"
+                    app:timeline_position="middle"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="12sp"
+                        android:textColor="#FFF"
+                        android:text="Incident Type"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="12dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="12dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="12dp"/>
+
+                <Button android:id="@+id/editCodeTypeButton"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3" android:layout_marginTop="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="12dp" android:text="TYPE"/>
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="8dp"
+                    app:timeline_position="middle"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="line">
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:background="@drawable/timeline_round"
+                    android:backgroundTint="@color/md_grey_850"
+                    app:timeline_position="middle"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="12sp"
+                        android:textColor="#FFF"
+                        android:text="Incident Priority (Leave empty for auto detection.)"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="12dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="12dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="12dp"/>
+
+                <Button android:id="@+id/editCodePriorityButton"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3" android:layout_marginTop="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="12dp"
+                        android:text="PRIORITY"/>
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="8dp"
+                    app:timeline_position="middle"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="line">
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:background="@drawable/timeline_round"
+                    android:backgroundTint="@color/md_grey_850"
+                    app:timeline_position="last"
+                    app:timeline_radio_outline_radius="23"
+                    app:timeline_radio_radius="15"
+                    app:timeline_type="item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="12sp"
+                        android:textColor="#FFF"
+                        android:text="Code Color"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="12dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="12dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="12dp"/>
+
+                <Button android:id="@+id/editCodeColor"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3" android:layout_marginTop="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="12dp"
+                        android:text="PICK COLOR"/>
+
+            </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+            <com.respondingio.main.views.IncidentChip android:layout_width="wrap_content"
+                                                      android:layout_height="wrap_content"
+                                                      android:layout_marginTop="8dp"
+                                                      android:layout_gravity="center_horizontal"
+                                                      android:id="@+id/editCodeChip"></com.respondingio.main.views.IncidentChip>
+
+            <!--<androidx.cardview.widget.CardView android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" app:cardCornerRadius="5dp"-->
+            <!--app:cardBackgroundColor="@color/md_grey_900">-->
+
+            <!--<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<TextView-->
+            <!--android:textSize="12sp"-->
+            <!--android:textColor="#FFF"-->
+            <!--android:fontFamily="sans-serif-condensed-medium"-->
+            <!--android:text="This is the code that comes from the 911 center dispatch text. (Eg. BREATHING PROBLEMS)"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" android:id="@+id/textView3"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--android:layout_marginTop="12dp" app:layout_constraintEnd_toEndOf="parent"-->
+            <!--android:layout_marginEnd="12dp" app:layout_constraintStart_toStartOf="parent"-->
+            <!--android:layout_marginStart="12dp"/>-->
+            <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:inputType="textPersonName"-->
+            <!--android:hint="Dispatch Code"-->
+            <!--android:ems="10"-->
+            <!--android:id="@+id/codeDispatch"-->
+            <!--android:textSize="14sp"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView3"-->
+            <!--app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"-->
+            <!--android:layout_marginEnd="8dp" android:layout_marginStart="8dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"/>-->
+
+            <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--</androidx.cardview.widget.CardView>-->
+
+            <!--<androidx.cardview.widget.CardView android:layout_width="match_parent"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_height="wrap_content" app:cardCornerRadius="5dp"-->
+            <!--app:cardBackgroundColor="@color/md_grey_900">-->
+
+            <!--<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<TextView-->
+            <!--android:textSize="12sp"-->
+            <!--android:textColor="#FFF"-->
+            <!--android:fontFamily="sans-serif-condensed-medium"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="This is the user facing incident code show in various places, leave blank to be same as above."-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" android:id="@+id/textView3"-->
+            <!--app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"-->
+            <!--android:layout_marginEnd="12dp"/>-->
+
+            <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:inputType="textPersonName"-->
+            <!--android:ems="10"-->
+            <!--android:id="@+id/codeName"-->
+            <!--android:textSize="14sp" android:hint="Code Name"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView3"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--android:layout_marginBottom="8dp"/>-->
+
+            <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--</androidx.cardview.widget.CardView>-->
+
+
+            <!--<Button-->
+            <!--android:text="Incident Type"-->
+            <!--android:backgroundTint="@color/md_grey_850"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" android:id="@+id/codeTypeButton" android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp" android:layout_marginTop="8dp"/>-->
+
+            <!--<Button-->
+            <!--android:text="Priority"-->
+            <!--android:backgroundTint="@color/md_grey_850"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" android:id="@+id/codePriorityButton"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp" android:layout_marginTop="8dp"/>-->
+
+            <!--<Button-->
+            <!--android:text="Color"-->
+            <!--android:backgroundTint="@color/md_grey_500"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" android:id="@+id/codeColorButton" android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp" android:layout_marginTop="8dp"/>-->
+
+            <!--<TextView-->
+            <!--android:text="Example"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" android:id="@+id/textView2" android:gravity="center_horizontal"-->
+            <!--android:layout_marginTop="8dp"/>-->
+            <!--<com.respondingio.main.views.IncidentChip android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="8dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:id="@+id/exampleChip"></com.respondingio.main.views.IncidentChip>-->
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="MaterialDrawerTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="material_drawer_background">@color/md_grey_900</item>
+        <item name="material_drawer_selected">#1AF44336</item>
+        <item name="material_drawer_selected_text">@color/md_red_500</item>
+
+        <item name="md_background_color">@color/timelineBG</item>
+        <item name="md_corner_radius">5dp</item>
+    </style>
+
+    <style name="IncidentCodeDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/md_white_1000</item>
+
+        <item name="md_background_color">@color/timelineBG</item>
+        <item name="md_corner_radius">5dp</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <!-- reference our hint & error styles -->
+        <item name="colorControlNormal">@color/md_grey_500</item>
+        <item name="colorControlActivated">@color/md_grey_500</item>
+        <item name="colorControlHighlight">@color/md_grey_500</item>
+    </style>
+
+</resources>

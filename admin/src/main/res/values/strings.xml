@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Admin Responding.io</string>
+
+    <string name="dispatch_code_help">
+        <b>Dispatch Code is bolded, optional modifier in italics.</b>
+
+        Code: <b>STRUCT FIRE</b> DELTA 6 <i>SINGLE RES</i>
+        Address: 1730 HUNTLEY ROAD, FREEHOLD TWP
+        Common Name:
+        Units: 25108R, 62E632, 62E672, 62T634, 62T674, 62ST62F, 62A6391, 25PSPC2, 62ST62E, 62ST67E
+        Cross Streets: STILLWATER ROAD / LOTTSVILLE NIOBE ROAD</string>
+</resources>

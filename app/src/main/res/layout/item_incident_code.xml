@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" android:id="@+id/codeTop" android:background="@color/md_blue_800">
+
+    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+          app:layout_constraintBottom_toBottomOf="parent" android:background="@color/md_light_dividers"
+          android:id="@+id/view"/>
+
+    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+          android:background="@color/md_light_dividers"
+          app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp" app:srcCompat="@drawable/star_of_life"
+            android:id="@+id/codeImage"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/codeTitle" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/codeSubTitle"
+            app:layout_constraintVertical_chainStyle="packed" app:layout_constraintStart_toEndOf="@+id/codeImage"
+            android:layout_marginStart="16dp" android:textColor="#FFF" android:fontFamily="@font/roboto_bold"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/codeSubTitle" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/codeTitle"
+            app:layout_constraintStart_toEndOf="@+id/codeImage" android:layout_marginStart="16dp"
+            android:textSize="12sp" android:textColor="@color/md_white_1000"/>
+    <TextView
+            android:textColor="@color/md_white_1000"
+            android:textAllCaps="true"
+            android:textSize="11sp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="AUTO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/codePriority" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toTopOf="@+id/codeTitle"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
