@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chip_top"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:background="@drawable/chip_blue_outine"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingRight="6dp">
+
+    <ImageView
+            android:id="@+id/chip_image"
+            android:layout_width="22dp"
+            android:layout_height="23dp"
+            android:layout_weight="1"
+            android:background="@drawable/position_circle_blue"
+            android:padding="4dp"
+            app:srcCompat="@drawable/star_of_life"/>
+
+    <TextView
+        android:id="@+id/chip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:text="EMR"
+        android:textColor="#FFF"
+        android:textSize="14sp" />
+
+</LinearLayout>

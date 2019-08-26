@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:clipToPadding="false"
+              android:padding="8dp"
+              android:background="@color/md_red_900">
+
+    <pl.hypeapp.materialtimelineview.MaterialTimelineView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:timeline_position="first"
+            app:timeline_type="item"
+            android:background="@drawable/timeline_round"
+            android:backgroundTint="@color/md_white_1000">
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:hint="Agency Name*"
+                android:ems="10"
+                android:id="@+id/addAgencyETName"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="16sp"/>
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:hint="Short Name*"
+                android:ems="10"
+                android:id="@+id/addAgencyETShortName"
+                app:layout_constraintTop_toBottomOf="@+id/addAgencyETName"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"/>
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:hint="Name"
+                android:ems="10"
+                android:id="@+id/addAgencyET"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/addAgencyETShortName"
+                app:layout_constraintEnd_toEndOf="@+id/addAgencyETShortName"
+                app:layout_constraintStart_toStartOf="@+id/addAgencyETShortName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"
+                android:textSize="16sp"/>
+
+    </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+    <pl.hypeapp.materialtimelineview.MaterialTimelineView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:timeline_position="middle"
+            app:timeline_type="line">
+
+        <TextView
+                android:text="County Information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="80dp"
+                android:textColor="#FFF"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="14sp"/>
+
+    </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+    <pl.hypeapp.materialtimelineview.MaterialTimelineView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:timeline_position="middle"
+            app:timeline_type="item"
+            android:background="@drawable/timeline_round"
+            android:backgroundTint="@color/md_white_1000">
+
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapCharacters"
+                android:hint="State*"
+                android:ems="10"
+                android:id="@+id/addAgencyETCoState"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="16sp"/>
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:hint="County*"
+                android:ems="10"
+                android:id="@+id/addAgencyETCounty"
+                app:layout_constraintTop_toBottomOf="@+id/addAgencyETCoState"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"/>
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapCharacters"
+                android:hint="County Code"
+                android:ems="10"
+                android:id="@+id/addAgencyETCoCode"
+                app:layout_constraintEnd_toEndOf="@+id/addAgencyETCounty"
+                app:layout_constraintStart_toStartOf="@+id/addAgencyETCounty"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintTop_toBottomOf="@+id/addAgencyETCounty"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"/>
+    </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+
+</LinearLayout>

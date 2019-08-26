@@ -3,10 +3,12 @@ package com.respondingio.admin.agency
 import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -23,10 +25,12 @@ import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter
 import com.stepstone.stepper.viewmodel.StepViewModel
 import kotlinx.android.synthetic.main.activity_new_agency.*
 import org.jetbrains.anko.find
+import org.jetbrains.anko.support.v4.act
 
 class NewAgencyActivity : AppCompatActivity() {
 
     private lateinit var mStepperLayout: StepperLayout
+    val mTitle: TextView by lazy { find<TextView>(R.id.title) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,11 +95,13 @@ class NewAgencyActivity : AppCompatActivity() {
             val dialog = ProgressDialog(context)
             dialog.setCancelable(false)
             dialog.setMessage("Saving")
-            dialog.show()
+            //dialog.show()
+            callback?.goToNextStep()
         }
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            return inflater.inflate(R.layout.item_agency, container, false)
+            (requireActivity() as NewAgencyActivity).mTitle.text = "BASIC INFORMATION"
+            return inflater.inflate(R.layout.new_agency_step_one, container, false)
         }
 
         override fun onSelected() {
@@ -104,6 +110,7 @@ class NewAgencyActivity : AppCompatActivity() {
 
         override fun verifyStep(): VerificationError? {
             //return VerificationError("Not Finished.")
+
             return null
         }
 

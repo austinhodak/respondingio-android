@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/responding_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/chip_orange_outline"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+            android:id="@+id/responding_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chip_orange_dark"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:paddingLeft="8dp"
+            android:paddingTop="1dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="2dp"
+            android:text="STATION"
+            android:textColor="#FFF"
+            android:textSize="14sp" />
+
+    <TextView
+            android:id="@+id/responding_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:gravity="right"
+            android:text="12:12"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+</LinearLayout>

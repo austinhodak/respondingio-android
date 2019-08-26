@@ -52,6 +52,7 @@ class LoginCheck : AppCompatActivity() {
     }
 
     private fun launchMain() {
+        Auth.updateOnlineStatus(this)
         startActivity<MainActivity>()
         finish()
     }

@@ -5,6 +5,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <FrameLayout
+            android:id="@+id/dashboard_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="54dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dashboard_nav">
+
+    </FrameLayout>
+
     <com.luseen.spacenavigation.SpaceNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -15,18 +28,5 @@
             app:centre_button_icon="@drawable/icons8_steering_wheel_100"
             app:space_background_color="@color/colorPrimary"
             android:id="@+id/dashboard_nav"/>
-
-    <FrameLayout
-            android:id="@+id/dashboard_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/dashboard_nav"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

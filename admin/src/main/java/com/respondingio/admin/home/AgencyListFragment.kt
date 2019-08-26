@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 import com.respondingio.admin.R
+import com.respondingio.admin.agency.AgencyDetailActivity
 import com.respondingio.admin.agency.NewAgencyActivity
 import com.respondingio.admin.models.Agency
 import net.idik.lib.slimadapter.SlimAdapter
@@ -47,6 +48,10 @@ class AgencyListFragment : Fragment() {
                 }
                 //injector.text(R.id.agencySubtitle, agencyType)
             }
+
+            injector.clicked(R.id.codeTop) {
+                startActivity<AgencyDetailActivity>("agencyID" to agency.agencyID)
+            }
         }
 
         loadAgencies()
@@ -59,7 +64,14 @@ class AgencyListFragment : Fragment() {
     private fun loadAgencies() {
         FirebaseFirestore.getInstance().collection("agencies").orderBy("agencyName").get().addOnSuccessListener {
             mData.clear()
-            mData = it.toObjects(Agency::class.java)
+
+            val docs = it.documents
+            for (doc in docs) {
+                val agency = doc.toObject(Agency::class.java)!!
+                agency.agencyID = doc.id
+                mData.add(agency)
+            }
+
             mAdapter.updateData(mData)
         }
     }

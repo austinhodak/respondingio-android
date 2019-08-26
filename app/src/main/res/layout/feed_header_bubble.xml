@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/outline_bubble">
+
+        <TextView
+                android:text="65"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:id="@+id/textView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@drawable/chip_grey"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:gravity="center"
+                android:backgroundTint="#FAFAFA"
+                android:textColor="@color/md_grey_800"/>
+
+        <TextView
+                android:text="Garland"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="12dp"
+                android:textColor="#FFF"
+                android:fontFamily="@font/roboto_medium"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

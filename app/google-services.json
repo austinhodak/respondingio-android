@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:935165413233:android:af61ddad6327b9fe",
+        "mobilesdk_app_id": "1:935165413233:android:95b15837e1b65abb",
         "android_client_info": {
-          "package_name": "com.respondingio.main"
+          "package_name": "com.respondingio.admin"
         }
       },
       "oauth_client": [
@@ -39,9 +39,40 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:935165413233:android:c9ca48751706cd45",
+        "mobilesdk_app_id": "1:935165413233:android:7dd2f66717d56b29",
         "android_client_info": {
-          "package_name": "com.whosenroute.respondingio"
+          "package_name": "com.respondingio.apparatus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935165413233-tbpjs9tdscduuv3nii57u0ji2ljs2pf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxCgrgYghhCUhcbgJx8jStfv3iYNOA6lI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935165413233:android:af61ddad6327b9fe",
+        "android_client_info": {
+          "package_name": "com.respondingio.main"
         }
       },
       "oauth_client": [

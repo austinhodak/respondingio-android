@@ -13,6 +13,9 @@
 
         <item name="md_background_color">@color/timelineBG</item>
         <item name="md_corner_radius">5dp</item>
+
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
     </style>
 
     <style name="IncidentCodeDialog" parent="Theme.AppCompat.Dialog">
@@ -39,6 +42,16 @@
         <item name="colorControlNormal">@color/md_grey_500</item>
         <item name="colorControlActivated">@color/md_grey_500</item>
         <item name="colorControlHighlight">@color/md_grey_500</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+           parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+           parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_bot_dialog</item>
     </style>
 
 </resources>

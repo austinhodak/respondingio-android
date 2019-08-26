@@ -3,6 +3,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.respondingio.main">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
             android:name=".Application"
             android:allowBackup="true"
@@ -26,7 +28,7 @@
 
         <meta-data
                 android:name="preloaded_fonts"
-                android:resource="@array/preloaded_fonts"/>
+                android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

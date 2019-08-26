@@ -12,19 +12,24 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.respondingio.admin.managing.IncidentCodesManager">
+        <activity android:name=".agency.AgencyDetailActivity">
         </activity>
-        <activity android:name="com.respondingio.admin.home.MainActivity">
+        <activity android:name=".managing.IncidentCodesManager">
         </activity>
-        <activity android:name="com.respondingio.admin.LoginCheck" android:theme="@style/AppTheme">
+        <activity android:name=".home.MainActivity">
+        </activity>
+        <activity
+                android:name=".LoginCheck"
+                android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".agency.NewAgencyActivity" />
+        <activity
+                android:name=".agency.NewAgencyActivity"
+                android:theme="@style/NewAgency"/>
 
         <meta-data
                 android:name="preloaded_fonts"

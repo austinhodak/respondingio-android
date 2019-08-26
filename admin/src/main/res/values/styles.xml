@@ -47,7 +47,25 @@
         <item name="ms_stepperType">dots</item>
         <item name="ms_activeStepColor">#FFFFFF</item>
         <item name="ms_inactiveStepColor">@color/md_grey_400</item>
-        <item name="ms_bottomNavigationBackground">?attr/colorPrimary</item>
+        <item name="ms_bottomNavigationBackground">@color/md_red_900</item>
+    </style>
+
+    <style name="NewAgency" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/md_red_900</item>
+        <item name="colorPrimaryDark">@color/md_red_900</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="material_drawer_background">@color/md_grey_900</item>
+        <item name="material_drawer_selected">#1AF44336</item>
+        <item name="material_drawer_selected_text">@color/md_red_500</item>
+
+        <item name="md_background_color">@color/timelineBG</item>
+        <item name="md_corner_radius">5dp</item>
+
+        <item name="ms_stepperStyle">@style/DotStepperStyle</item>
+
+        <item name="android:statusBarColor">@color/md_red_900</item>
     </style>
 
 </resources>

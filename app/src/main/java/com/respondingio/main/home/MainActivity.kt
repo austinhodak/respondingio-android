@@ -1,5 +1,6 @@
 package com.respondingio.main.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -10,10 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
+import com.google.firebase.auth.FirebaseAuth
 import com.mikepenz.materialdrawer.Drawer
+import com.respondingio.functions.agencies.AgencyUtils
+import com.respondingio.functions.models.firestore.Incident
 import com.respondingio.main.R
 import com.respondingio.main.managing.IncidentCodesManager
-import com.respondingio.main.models.Incident
 import com.respondingio.main.utils.Auth
 import com.respondingio.main.utils.Firestore
 import com.respondingio.main.viewmodels.MainActivityViewModel
@@ -39,18 +42,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        AgencyUtils.loadUserAgencies(FirebaseAuth.getInstance().uid!!)
 
         setupDrawer()
 
         mIncidentRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val mAdapter = SlimAdapter.create().attachTo(mIncidentRV).register(R.layout.incident_chip_item) { incident: Incident, injector ->
             val item = injector.findViewById<IncidentChip>(R.id.top)
-            item.setText(incident.type!!.CADCode!!)
+            item.setText(incident.address!!.fromText!!)
+            item.setColor(incident.type!!.color!!)
             item.EMS()
+            //item.EMS()
         }
         mainViewModel.activeIncidentData.observe(this, Observer {
             if (it.activeIncidentsList.isNotEmpty()) {
-                mIncidentRV.visibility = View.VISIBLE
+                mIncidentRV.visibility = View.GONE
             } else {
                 mIncidentRV.visibility = View.GONE
             }
@@ -58,6 +64,11 @@ class MainActivity : AppCompatActivity() {
             mAdapter.updateData(it.activeIncidentsList)
         })
         mainViewModel.getActiveIncidents()
+        mainViewModel.loadUserAgencies(Auth.getUser()!!.uid)
+
+        GlobalScope.launch {
+            //mainViewModel.loadResponding(Firestore.getUser(Auth.getUser()!!).getPrimaryAgencyID()!!)
+        }
     }
 
     private fun setupDrawer() {

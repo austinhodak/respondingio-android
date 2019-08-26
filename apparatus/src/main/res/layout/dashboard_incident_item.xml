@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="4dp"
+        app:cardBackgroundColor="@color/md_grey_850"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:cardPreventCornerOverlap="true"
+        android:id="@+id/cardView2"
+        android:layout_marginBottom="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/alertLayout"
+                android:background="@color/md_amber_700"
+                android:visibility="visible"
+                >
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="16dp"
+                    android:textColor="#FFF"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:text="INCIDENT"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/alertText"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"/>
+
+            <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_warning_24dp"
+                    android:id="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/material_drawer_shadow_top"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/timelineRed"
+                app:layout_constraintBottom_toTopOf="@+id/view4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/incidentColor"
+                app:layout_constraintTop_toBottomOf="@+id/alertLayout"/>
+
+        <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/fire_1"
+                android:id="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/incidentColor"
+                app:layout_constraintTop_toBottomOf="@+id/alertLayout"/>
+
+        <TextView
+                android:text="STRUCTURE FIRE"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/incidentTitle"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                android:layout_marginStart="16dp"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_bold"
+                app:layout_constraintTop_toBottomOf="@+id/alertLayout"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/incidentPriority"/>
+
+        <TextView
+                android:text="1234 MAIN ST"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/incidentAddress"
+                app:layout_constraintTop_toBottomOf="@+id/incidentTitle"
+                app:layout_constraintStart_toStartOf="@+id/incidentTitle"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView13"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/material_drawer_shadow_bottom"
+                app:layout_constraintTop_toBottomOf="@+id/incidentAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:id="@+id/view4"/>
+
+        <TextView
+                android:text="Inc Code: STRUCT FIRE DELTA 6 SINGLE RES Address: 1730 HUNTLEY ROAD, FREEHOLD TWP Common Name:  Units: 25108R, 62E632, 62E672, 62T634, 62T674, 62ST62F, 62A6391, 25PSPC2, 62ST62E, 62ST67E Cross Streets: STILLWATER ROAD / LOTTSVILLE NIOBE ROAD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/incidentRemarks"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/incidentColor"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"/>
+
+        <TextView
+                android:text="12:51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView13"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:textColor="#FFF"
+                app:layout_constraintTop_toBottomOf="@+id/incidentPriority"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/incidentColor"/>
+
+        <TextView
+                android:text="HIGH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/incidentPriority"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/alertLayout"
+                app:layout_constraintBottom_toTopOf="@+id/textView13"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintEnd_toEndOf="@+id/textView13"
+                android:layout_marginBottom="1dp"
+                android:textColor="#FFF"
+                android:fontFamily="@font/roboto_black"/>
+
+        <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/unitsBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/incidentRemarks"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="12dp"
+                app:flexWrap="wrap"></com.google.android.flexbox.FlexboxLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
