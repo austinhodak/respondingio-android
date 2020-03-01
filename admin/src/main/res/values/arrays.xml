@@ -26,4 +26,15 @@
         <item>Police</item>
         <item>SAR</item>
     </string-array>
+
+    <string-array name="position_types">
+        <item>Fire</item>
+        <item>EMS</item>
+        <item>Police</item>
+        <item>Officer</item>
+        <item>Administrative</item>
+        <item>Junior</item>
+        <item>Support</item>
+        <item>Driver</item>
+    </string-array>
 </resources>

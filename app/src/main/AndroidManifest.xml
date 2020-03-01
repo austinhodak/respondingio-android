@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.respondingio.main">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.respondingio.main">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
             android:name=".Application"
@@ -14,15 +16,23 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".managing.IncidentCodesManager">
+        <activity
+                android:name=".notifications.IncidentPopupActivity"
+                android:excludeFromRecents="true"
+                android:theme="@style/IncidentPopup">
         </activity>
-        <activity android:name=".home.MainActivity">
-        </activity>
-        <activity android:name=".LoginCheck" android:theme="@style/AppTheme">
+        <activity
+                android:name=".settings.SettingsActivity"
+                android:label="@string/title_activity_settings" />
+        <activity android:name=".managing.IncidentCodesManager" />
+        <activity android:name=".home.MainActivity" />
+        <activity
+                android:name=".LoginCheck"
+                android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 

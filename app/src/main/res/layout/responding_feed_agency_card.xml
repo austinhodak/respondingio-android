@@ -8,7 +8,7 @@
         app:cardCornerRadius="5dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="4dp"
-        app:cardBackgroundColor="@color/md_grey_850"
+        app:cardBackgroundColor="@color/cardBackground"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -24,7 +24,7 @@
                 android:id="@+id/alertLayout"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="@color/md_blue_700"
+                android:background="@color/md_orange_400"
                 android:visibility="visible"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -37,8 +37,8 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:text="65"
-                    android:textColor="#FFF"
-                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -54,14 +54,14 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:text="GARLAND"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/alertText3"
                     app:layout_constraintStart_toEndOf="@+id/alertText"
                     app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <Chronometer
                     android:id="@+id/alertText3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -70,8 +70,10 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:text="+ 05:15"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

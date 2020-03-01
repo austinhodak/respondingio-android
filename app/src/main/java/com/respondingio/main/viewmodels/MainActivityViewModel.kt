@@ -8,12 +8,12 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
-import com.respondingio.functions.agencies.AgencyUtils
 import com.respondingio.functions.models.firestore.Agency
 import com.respondingio.functions.models.firestore.Incident
 import com.respondingio.functions.models.realtime.User
 import com.respondingio.main.utils.Auth
 import com.respondingio.main.utils.Firestore
+import com.respondingio.main.utils.Notifications
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -104,6 +104,7 @@ class MainActivityViewModel : ViewModel() {
         FirebaseFirestore.getInstance().collection("users").document(userID).get().addOnSuccessListener {
             val user = it.toObject(com.respondingio.functions.models.firestore.User::class.java)
             for (agency in user?.agencies!!) {
+                Notifications.updateTopics(user.agencies!!)
                 FirebaseFirestore.getInstance().collection("agencies").document(agency.key).get().addOnSuccessListener { agency ->
                     val agencyObject = agency.toObject(Agency::class.java)!!
                     agencyObject.agencyID = agency.id

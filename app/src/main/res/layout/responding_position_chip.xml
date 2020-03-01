@@ -4,7 +4,7 @@
         android:id="@+id/chip_top"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginLeft="6dp"
         android:background="@drawable/chip_blue_outine"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -28,6 +28,6 @@
             android:fontFamily="@font/roboto_condensed_bold"
             android:text="EMR"
             android:textColor="#FFF"
-            android:textSize="12sp" />
+            android:textSize="11sp" />
 
 </LinearLayout>

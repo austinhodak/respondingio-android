@@ -16,7 +16,8 @@ data class Agency (
     var path: String = "",
     var agencyName: String? = null,
     var shortName: String? = agencyName,
-    var responseOptions: List<ResponseOption>? = defaultResponseOptions
+    var responseOptions: List<ResponseOption>? = defaultResponseOptions,
+    var stationNumber: String? = null
 ) {
 
     fun loadStations() {

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".notifications.IncidentPopupActivity">
+
+    <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+            <com.mapbox.mapboxsdk.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/alertLayout">
+
+            </com.mapbox.mapboxsdk.maps.MapView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/alertLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/md_red_400"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                        android:id="@+id/dismiss"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_clear_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/alertText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/roboto_black"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="65"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/alertText2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/roboto_condensed_bold"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="GARLAND"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/alertText3"
+                        app:layout_constraintStart_toEndOf="@+id/alertText"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/alertText3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/roboto_condensed_bold"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="12:51"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/material_drawer_shadow_top"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                <View
+                        android:id="@+id/incidentColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@color/md_red_400"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:tint="#000"
+                        app:layout_constraintBottom_toBottomOf="@+id/incidentColor"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/fire_1" />
+
+                <TextView
+                        android:id="@+id/incidentTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="STRUCTURE FIRE"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toStartOf="@+id/incidentPriority"
+                        app:layout_constraintStart_toEndOf="@+id/imageView3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/incidentAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="1234 MAIN ST"
+                        android:textColor="#000"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/incidentPriority"
+                        app:layout_constraintStart_toStartOf="@+id/incidentTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/incidentTitle" />
+
+                <TextView
+                        android:id="@+id/incidentPriority"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/roboto_black"
+                        android:text="DELTA"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                    android:id="@+id/test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Call Time:1/17/2020 16:01:48 Call Type:CONVULSIONS/SEIZURES DELTA -12 Address:385 MAIN ST, PITTSFIELD TWP Common Name: Closest Intersection: DAVEY HILL RD, DALRYMPLE ST / CHURCH ST Additional Location Info: Nature of Call: Assigned Units: 62ST65E, 62ST61E Priority: High Quadrant: 62 65 2 District: 62 61B &amp; 65Q Beat: 62 PSPW CFS Number:2719 Primary Incident: Radio Channel: Narrative: 38-year-old, Male, Not Conscious, Breathing. CC Text: Convulsions / Seizures Caller Statement: SEIZURE Dispatch Code:.. "
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/material_drawer_shadow_top"
+                    app:layout_constraintBottom_toTopOf="@+id/test" />
+
+            <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/material_drawer_shadow_top"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout3" />
+
+            <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/md_light_dividers"
+                    app:layout_constraintBottom_toTopOf="@+id/button_scrollv" />
+
+            <HorizontalScrollView
+                    android:id="@+id/button_scrollv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:fadingEdgeLength="150dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:requiresFadingEdge="vertical"
+                    android:scrollbars="none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false">
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/respondButton"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="1dp"
+                            android:backgroundTint="@color/timelineOrange"
+                            android:backgroundTintMode="src_over"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:text="Station"
+                            android:textColor="@color/primaryText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/respondButton2"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/timelineRed"
+                            android:backgroundTintMode="src_over"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:text="Scene"
+                            android:textColor="@color/primaryText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/respondButton3"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/timelineGrey"
+                            android:backgroundTintMode="src_over"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:text="Delayed"
+                            android:textColor="@color/primaryText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/materialButton"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="1dp"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:text="Unavailable"
+                            android:textColor="@color/primaryText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/respondButton" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

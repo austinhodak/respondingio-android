@@ -1,4 +1,4 @@
-package com.respondingio.main.snacky;
+package com.respondingio.functions.snacky;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -14,12 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IntDef;
@@ -27,7 +21,13 @@ import androidx.annotation.IntRange;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
-import com.respondingio.main.R;
+
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+import com.respondingio.functions.R;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 

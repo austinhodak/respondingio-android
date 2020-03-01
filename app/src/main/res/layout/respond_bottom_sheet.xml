@@ -14,7 +14,8 @@
             android:paddingLeft="16dp">
 
         <ImageView
-                android:src="@drawable/ic_close_24dp"
+                android:tint="@color/primaryText"
+                android:src="@drawable/ic_arrow_back_black_24dp"
                 android:id="@+id/close_button"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -29,17 +30,19 @@
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center_horizontal"
                 android:text="RESPONDING"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/primaryText"
                 android:textSize="16sp"/>
 
         <ImageView
-                android:src="@drawable/ic_settings_24dp"
+                android:tint="@color/primaryText"
+                android:id="@+id/respond_clear_list"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginRight="16dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:visibility="visible"/>
+                android:src="@drawable/icons8_delete_property"
+                android:visibility="visible" />
 
     </LinearLayout>
 
@@ -63,7 +66,7 @@
                 android:fontFamily="@font/roboto_medium"
                 android:text="Select Agency"
                 android:textAllCaps="false"
-                android:textColor="#FFF"
+                android:textColor="@color/primaryText87"
                 android:textSize="16sp"/>
 
         <ProgressBar
@@ -81,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/timeline_round_20"
-            android:backgroundTint="@color/md_grey_850"
+            android:backgroundTint="@color/bottomCardRounded"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:paddingTop="8dp"
@@ -109,7 +112,7 @@
                 android:fontFamily="@font/roboto_medium"
                 android:text="Responding to..."
                 android:textAllCaps="false"
-                android:textColor="#FFF"
+                android:textColor="@color/primaryText87"
                 android:textSize="16sp"/>
 
     </LinearLayout>
@@ -122,7 +125,7 @@
             android:paddingLeft="48dp"
             android:paddingRight="16dp"
             android:background="@drawable/timeline_round_20"
-            android:backgroundTint="@color/md_grey_850"
+            android:backgroundTint="@color/bottomCardRounded"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:paddingTop="8dp">

@@ -4,7 +4,9 @@ data class User (
     var userID: String? = null,
     var online: Boolean? = false,
     var name: Name? = null,
-    var responding: Responding? = null
+    var responding: Responding? = null,
+    var contactPhoneNumber: String? = null,
+    var positions: HashMap<String, HashMap<String, Boolean>>? = null
 ) {
 
     fun isUserResponding() : Boolean {
@@ -25,6 +27,8 @@ data class User (
         var station: String? = null,
         var timestamp: Long? = null,
         var respondingTo: String? = null,
-        var respondingToType: String? = null
+        var respondingToType: String? = null,
+        var onScene: Boolean? = null,
+        var onSceneTime: Long? = null
     )
 }

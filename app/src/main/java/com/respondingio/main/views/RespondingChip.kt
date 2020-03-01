@@ -36,6 +36,10 @@ class RespondingChip constructor(context: Context, attr: AttributeSet? = null) :
     }
 
     fun setTime(time: Long): RespondingChip {
+        if (time == 0.toLong()) {
+            chipTime.text = "NO TIME"
+            return this
+        }
         val sdf = SimpleDateFormat("HH:mm")
         val resultdate = Date(time)
         chipTime.text = sdf.format(resultdate)
@@ -82,6 +86,12 @@ class RespondingChip constructor(context: Context, attr: AttributeSet? = null) :
             }
         }
 
+        return this
+    }
+
+    fun onScene(): RespondingChip {
+        chipTop.setBackgroundResource(R.drawable.chip_pink_outline)
+        chipText.setBackgroundResource(R.drawable.chip_pink)
         return this
     }
 }

@@ -1,1 +1,1 @@
-include ':app', ':admin', ':apparatus', ':library'
+include ':app', ':admin', ':apparatus', ':library', ':spacelib'

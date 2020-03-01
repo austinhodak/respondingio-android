@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.iid.FirebaseInstanceId
 import com.respondingio.functions.utils.Time
 
 object Auth {
@@ -38,11 +39,20 @@ object Auth {
             "online" to false,
             "lastOffline" to Time.getCurrentUTC()
         ))
+
+        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
+            val token = it.token
+            FirebaseDatabase.getInstance().getReference("users/${getUser()?.uid}/devices/${getDeviceInfo()}").updateChildren(mapOf(
+                "messageToken" to token
+            ))
+        }
     }
 
     private fun getDeviceInfo(): String {
         // Replace periods with dashes as Firebase URL cannot contain periods.
         return android.os.Build.MODEL.replace(".","-")
     }
+
+
 }
 

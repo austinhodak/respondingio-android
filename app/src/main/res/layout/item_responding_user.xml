@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.75dp"
             android:layout_marginTop="1dp"
-            android:background="@color/md_light_dividers"
+            android:background="#33000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
             android:text="TextView"
-            android:textColor="#FFF"
+            android:textColor="@color/primaryText87"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
@@ -36,8 +36,10 @@
             android:id="@+id/horizontalScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
+            android:clickable="false"
+            android:focusable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +49,8 @@
                 android:id="@+id/test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
                 android:orientation="horizontal">
 
             <!--            <include layout="@layout/responding_position_chip" />-->

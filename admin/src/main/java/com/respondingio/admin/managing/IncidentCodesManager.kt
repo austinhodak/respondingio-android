@@ -1,5 +1,6 @@
 package com.respondingio.admin.managing
 
+import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -43,6 +44,7 @@ class IncidentCodesManager : AppCompatActivity() {
     lateinit var mAdapter: SlimAdapter
     val mData: MutableList<IncidentCode> = ArrayList()
 
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_incident_codes_manager)
@@ -218,8 +220,8 @@ class IncidentCodesManager : AppCompatActivity() {
 
                 MaterialDialog(requireContext()).show {
                     listItemsSingleChoice(items = myItems, initialSelection = myItems.indexOf(selectedPriority)) { dialog, index, text ->
-                        selectedPriority = text
-                        view.findViewById<Button>(R.id.editCodePriorityButton)?.text = text.toUpperCase()
+                        selectedPriority = text.toString()
+                        view.findViewById<Button>(R.id.editCodePriorityButton)?.text = text.toString().toUpperCase()
                     }
                 }
             }
@@ -229,9 +231,9 @@ class IncidentCodesManager : AppCompatActivity() {
 
                 MaterialDialog(requireContext()).show {
                     listItemsSingleChoice(items = myItems, initialSelection = myItems.indexOf(selectedType)) { dialog, index, text ->
-                        selectedType = text
-                        view.findViewById<Button>(R.id.editCodeTypeButton)?.text = text.toUpperCase()
-                        (view.findViewById<IncidentChip>(R.id.editCodeChip)).updateType(text)
+                        selectedType = text.toString()
+                        view.findViewById<Button>(R.id.editCodeTypeButton)?.text = text.toString().toUpperCase()
+                        (view.findViewById<IncidentChip>(R.id.editCodeChip)).updateType(text.toString())
                     }
                 }
             }

@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/timelineDark</color>
-    <color name="colorPrimaryDark">@color/timelineDark</color>
+    <color name="colorPrimary">@color/md_red_500</color>
+    <color name="colorPrimaryDark">@color/md_red_700</color>
+<!--    <color name="colorAccent">#f4a236</color>-->
     <color name="colorAccent">@color/md_red_500</color>
+
+    <color name="primaryText">#000</color>
+    <color name="primaryText87">#DE000000</color>
+    <color name="primaryText60">#99000000</color>
+    <color name="primaryText38">#61000000</color>
+
+    <color name="bottomCardRounded">@color/md_grey_100</color>
+    <color name="background">@color/md_light_background</color>
+    <color name="cardBackground">#FFF</color>
+
+    <color name="dashboardMenuBG">#FFF</color>
 
     <!-- Dark Background Colors -->
     <color name="red_dark">#ff695e</color>

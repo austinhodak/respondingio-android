@@ -9,4 +9,7 @@
         Common Name:
         Units: 25108R, 62E632, 62E672, 62T634, 62T674, 62ST62F, 62A6391, 25PSPC2, 62ST62E, 62ST67E
         Cross Streets: STILLWATER ROAD / LOTTSVILLE NIOBE ROAD</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

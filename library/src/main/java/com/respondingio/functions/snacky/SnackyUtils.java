@@ -1,4 +1,4 @@
-package com.respondingio.main.snacky;
+package com.respondingio.functions.snacky;
 
 import android.content.Context;
 import android.graphics.Bitmap;

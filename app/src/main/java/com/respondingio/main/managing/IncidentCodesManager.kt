@@ -1,5 +1,6 @@
 package com.respondingio.main.managing
 
+import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -43,10 +44,11 @@ class IncidentCodesManager : AppCompatActivity() {
     lateinit var mAdapter: SlimAdapter
     val mData: MutableList<IncidentCode> = ArrayList()
 
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_incident_codes_manager)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar_settings)
 
         toolbar.setNavigationIcon(R.drawable.ic_close_24dp)
         toolbar.setNavigationOnClickListener { onBackPressed() }
@@ -166,7 +168,7 @@ class IncidentCodesManager : AppCompatActivity() {
 
             Log.d("DIALOG", "SHOW")
 
-            val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+            val toolbar = view.findViewById<Toolbar>(R.id.toolbar_settings)
             toolbar.setNavigationIcon(R.drawable.ic_close_24dp)
             toolbar.setNavigationOnClickListener { dismiss() }
 
@@ -182,7 +184,7 @@ class IncidentCodesManager : AppCompatActivity() {
             (view.findViewById<IncidentChip>(R.id.editCodeChip)).setColor(R.color.md_grey_500).setImage(null)
 
             if (arguments != null) {
-                fillFields(arguments!!.getString("codeKey"), arguments!!.getSerializable("code") as IncidentCode)
+                fillFields(arguments!!.getString("codeKey")!!, arguments!!.getSerializable("code") as IncidentCode)
             }
 
             val PRIMARY_COLORS = intArrayOf(

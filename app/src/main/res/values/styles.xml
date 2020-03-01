@@ -1,20 +1,25 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="MaterialDrawerTheme">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="material_drawer_background">@color/md_grey_900</item>
+        <item name="material_drawer_background">@color/white</item>
         <item name="material_drawer_selected">#1AF44336</item>
         <item name="material_drawer_selected_text">@color/md_red_500</item>
 
-        <item name="md_background_color">@color/timelineBG</item>
+<!--        <item name="md_background_color">@color/timelineBG</item>-->
         <item name="md_corner_radius">5dp</item>
 
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
+        <item name="centre_button_color">@color/colorPrimary</item>
+
+        <item name="colorControlNormal">#121212</item>
+
 
     </style>
 
@@ -52,6 +57,16 @@
     <style name="AppModalStyle"
            parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/rounded_bot_dialog</item>
+    </style>
+
+    <style name="IncidentPopup" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
 </resources>
