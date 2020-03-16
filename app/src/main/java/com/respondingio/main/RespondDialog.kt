@@ -26,6 +26,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.respond_bottom_sheet.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.act
 
 
@@ -93,6 +94,13 @@ class RespondDialog : BottomSheetDialogFragment() {
 
         contentView?.find<ImageView>(R.id.close_button)?.setOnClickListener {
             dismiss()
+        }
+
+        contentView?.find<ImageView>(R.id.respond_clear_list)?.onClick {
+            if (selectedAgency != null) {
+                RespondingUtils.clearAgencyRespondingUser(selectedAgency!!.agencyID!!)
+                dismiss()
+            }
         }
     }
 

@@ -2,6 +2,7 @@ package com.respondingio.admin
 
 import android.app.Application
 import com.google.firebase.database.FirebaseDatabase
+import com.respondingio.functions.utils.Realtime
 
 class Application : Application() {
 
@@ -13,5 +14,6 @@ class Application : Application() {
 
     private fun initFirebase() {
         FirebaseDatabase.getInstance().setPersistenceEnabled(true)
+        Realtime.agencyData().setPersistenceEnabled(true)
     }
 }

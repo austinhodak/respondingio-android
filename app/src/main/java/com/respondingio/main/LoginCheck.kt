@@ -1,7 +1,9 @@
 package com.respondingio.main
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
@@ -15,6 +17,7 @@ import org.jetbrains.anko.toast
 class LoginCheck : AppCompatActivity() {
 
     private val RC_SIGN_IN = 100
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

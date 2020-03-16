@@ -10,12 +10,28 @@ import kotlin.coroutines.suspendCoroutine
 
 object Firestore {
 
+    fun i(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance();
+    }
+
     suspend fun getUser(firebaseUser: FirebaseUser): User {
         val mFirestore = FirebaseFirestore.getInstance()
 
         return suspendCoroutine {
             mFirestore.collection("users")
                 .document(firebaseUser.uid)
+                .get().addOnSuccessListener { snapshot ->
+                    it.resume(snapshot.toObject(User::class.java) as User)
+                }
+        }
+    }
+
+    suspend fun getUser(uid: String): User {
+        val mFirestore = FirebaseFirestore.getInstance()
+
+        return suspendCoroutine {
+            mFirestore.collection("users")
+                .document(uid)
                 .get().addOnSuccessListener { snapshot ->
                     it.resume(snapshot.toObject(User::class.java) as User)
                 }

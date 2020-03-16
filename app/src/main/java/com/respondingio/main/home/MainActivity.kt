@@ -1,14 +1,13 @@
 package com.respondingio.main.home
 
-import android.content.res.Configuration
-import android.graphics.Color
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import android.view.WindowManager
-import android.widget.CompoundButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,16 +15,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
-import com.mikepenz.materialdrawer.interfaces.OnCheckedChangeListener
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
-import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.respondingio.functions.agencies.AgencyUtils
 import com.respondingio.functions.models.firestore.Incident
 import com.respondingio.main.R
-import com.respondingio.main.managing.IncidentCodesManager
+import com.respondingio.main.darkModeToggle
+import com.respondingio.main.inventory.ItemsList
 import com.respondingio.main.settings.SettingsActivity
 import com.respondingio.main.utils.Auth
 import com.respondingio.main.utils.Firestore
@@ -39,13 +37,13 @@ import net.idik.lib.slimadapter.SlimAdapter
 import org.jetbrains.anko.configuration
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
     private val mainViewModel: MainActivityViewModel by lazy {
         ViewModelProviders.of(this@MainActivity).get(MainActivityViewModel::class.java)
     }
+
 
     private lateinit var mDrawer: Drawer
 
@@ -56,6 +54,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         AgencyUtils.loadUserAgencies(FirebaseAuth.getInstance().uid!!)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) { // Show alert dialog to the user saying a separate permission is needed
+            val myIntent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
+            startActivity(myIntent)
+        }
 
         setupDrawer()
 
@@ -92,32 +95,17 @@ class MainActivity : AppCompatActivity() {
            .withHeader(R.layout.drawer_home_header)
            .withHeaderDivider(false)
            .addDrawerItems(
-               PrimaryDrawerItem().withIdentifier(100).withName("Dashboard").withIcon(R.drawable.icons8_speedometer_96)
-               /*ExpandableDrawerItem().withName("Apparatus").withSelectable(false).withIcon(R.drawable.icons8_fire_truck).withSubItems(
-                   ExpandableDrawerItem().withName("Garland 65").withSelectable(false).withSubItems(
-                       SecondaryDrawerItem().withName("Engine 651"),
-                       SecondaryDrawerItem().withName("Tanker 654"),
-                       SecondaryDrawerItem().withName("Utility 658")
-                   )
-               )*/
-           )
-           .addStickyDrawerItems(
-               SecondarySwitchDrawerItem().withIcon(R.drawable.dark_mode_icon).withSelectable(false).withIdentifier(200).withOnCheckedChangeListener(object : OnCheckedChangeListener {
-                   override fun onCheckedChanged(drawerItem: IDrawerItem<*>, buttonView: CompoundButton, isChecked: Boolean) {
-                       if (isChecked) {
-                           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                       } else {
-                           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                       }
-                   }
-               }).withName("Dark Mode").withChecked(configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES),
-               SecondaryDrawerItem().withName("Settings").withIdentifier(201).withSelectable(false).withEnabled(true).withIcon(R.drawable.icons8_settings)
+               PrimaryDrawerItem().withIdentifier(100).withName("Dashboard").withIcon(R.drawable.icons8_speedometer_96),
+               PrimaryDrawerItem().withName("Inventory").withIdentifier(101).withSelectable(true).withIcon(R.drawable.icons8_product_96)
            )
            .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
                    when (drawerItem.identifier.toInt()) {
                        100 -> {
                            supportFragmentManager.beginTransaction().replace(R.id.main_frame, DashboardFragment()).commit()
+                       }
+                       101 -> {
+                           supportFragmentManager.beginTransaction().replace(R.id.main_frame, ItemsList()).commit()
                        }
                        201 -> {
                            startActivity<SettingsActivity>()
@@ -126,6 +114,7 @@ class MainActivity : AppCompatActivity() {
                    return false
                }
            })
+           .darkModeToggle(configuration)
            .build()
 
         supportFragmentManager.beginTransaction().replace(R.id.main_frame, DashboardFragment()).commit()

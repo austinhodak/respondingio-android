@@ -17,6 +17,7 @@
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
 
         <item name="material_drawer_secondary_text">#99FFFFFF</item>
+        <item name="material_drawer_primary_text">#FFF</item>
 
         <item name="centre_button_color">@color/md_red_500</item>
         <item name="active_centre_button_icon_color">#FFF</item>

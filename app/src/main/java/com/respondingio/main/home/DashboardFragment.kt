@@ -59,7 +59,11 @@ class DashboardFragment : Fragment() {
             Log.d("USER", it.toString())
             Handler().postDelayed({
                 if (it.isUserResponding()) {
-                    space?.changeCenterButtonIcon(R.drawable.icons8_place_marker_96)
+                    if (it.responding?.respondingToType == "UNAVAILABLE") {
+                        space?.changeCenterButtonIcon(R.drawable.icons8_steering_wheel_100)
+                    } else {
+                        space?.changeCenterButtonIcon(R.drawable.icons8_place_marker_96)
+                    }
                 } else {
                     space?.changeCenterButtonIcon(R.drawable.icons8_steering_wheel_100)
                 }
@@ -69,7 +73,7 @@ class DashboardFragment : Fragment() {
 
         space?.setSpaceOnClickListener(object : SpaceOnClickListener {
             override fun onCentreButtonClick() {
-                if (!currentUser!!.isUserResponding()) {
+                if (!currentUser!!.isUserResponding() || currentUser!!.responding?.respondingToType == "UNAVAILABLE") {
                     val respondDialog = RespondDialog()
                     respondDialog.show(childFragmentManager.beginTransaction(), "RESPOND_DIALOG")
                 } else {

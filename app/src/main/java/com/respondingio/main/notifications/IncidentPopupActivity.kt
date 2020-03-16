@@ -6,23 +6,34 @@ import com.mapbox.mapboxsdk.annotations.MarkerOptions
 import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
 import com.mapbox.mapboxsdk.geometry.LatLng
+import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.Style
 import com.respondingio.main.R
 import com.respondingio.main.RespondDialog
+import com.respondingio.main.models.NotificationIncident
 import kotlinx.android.synthetic.main.activity_incident_popup.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class IncidentPopupActivity : AppCompatActivity() {
 
+    lateinit var map: MapboxMap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_incident_popup)
 
+        val incident = intent.getSerializableExtra("incident") as? NotificationIncident
+        if (incident != null) update(incident)
+
         mapView?.onCreate(savedInstanceState)
         mapView?.getMapAsync {
+            map = it
             it.setStyle(Style.Builder().fromUri("mapbox://styles/ahodak/cjk3fznkx1j0o2splunwl0s72"))
-            it.addMarker(MarkerOptions().position(LatLng(41.84140052403469, -79.353778577586624)).title("29100 RT 6"))
-            it.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.Builder().target(LatLng(41.84140052403469, -79.353778577586624)).zoom(15.0).tilt(0.0).build()))
+
+            if (incident?.location != null) {
+                map.addMarker(MarkerOptions().position(incident.location?.coordinates?.toLatLng()).title(incident.location?.fromText))
+                map.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.Builder().target(incident.location?.coordinates?.toLatLng()).zoom(16.0).tilt(0.0).build()))
+            }
         }
 
         respondButton?.onClick {
@@ -32,6 +43,17 @@ class IncidentPopupActivity : AppCompatActivity() {
         dismiss?.onClick {
             finish()
         }
+    }
+
+    private fun update(incident: NotificationIncident) {
+        incidentTitle?.text = incident.callType
+        incidentAddress?.text = incident.location?.fromText
+        incidentText?.text = incident.initialText
+
+        imageView3.setImageDrawable(resources.getDrawable(incident.getIcon()))
+
+        alertLayout?.setBackgroundColor(resources.getColor(incident.getColor()))
+        incidentColor?.setBackgroundColor(resources.getColor(incident.getColor()))
     }
 }
 

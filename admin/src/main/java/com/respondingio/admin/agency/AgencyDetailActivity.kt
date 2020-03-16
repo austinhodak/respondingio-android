@@ -39,13 +39,15 @@ class AgencyDetailActivity : AppCompatActivity() {
             .withToolbar(findViewById(R.id.agencyDetailToolbar))
             .addDrawerItems(
                 PrimaryDrawerItem().withIdentifier(100).withName("Agency Dashboard").withIcon(R.drawable.icons8_speedometer_96),
-                PrimaryDrawerItem().withIdentifier(101).withName("Positions")
+                PrimaryDrawerItem().withIdentifier(101).withName("Positions"),
+                PrimaryDrawerItem().withIdentifier(102).withName("Members")
             )
             .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                 override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
                     when (drawerItem.identifier.toInt()) {
                         //100 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, DashboardFragment()).commit()
                         101 -> supportFragmentManager.beginTransaction().replace(R.id.agencyDetailFrame, PositionListFragment()).commit()
+                        102 -> supportFragmentManager.beginTransaction().replace(R.id.agencyDetailFrame, MembersListFragment()).commit()
                     }
                     return false
                 }

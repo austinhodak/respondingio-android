@@ -150,24 +150,31 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto_bold"
+                        android:maxLines="1"
                         android:text="STRUCTURE FIRE"
                         android:textColor="#000"
                         android:textSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeTextType="uniform"
                         app:layout_constraintEnd_toStartOf="@+id/incidentPriority"
                         app:layout_constraintStart_toEndOf="@+id/imageView3"
                         app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+
                         android:id="@+id/incidentAddress"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="16dp"
                         android:layout_marginBottom="16dp"
+                        android:maxLines="2"
                         android:text="1234 MAIN ST"
                         android:textColor="#000"
                         android:textSize="13sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeTextType="uniform"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/incidentPriority"
                         app:layout_constraintStart_toStartOf="@+id/incidentTitle"
@@ -189,7 +196,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                    android:id="@+id/test"
+                    android:id="@+id/incidentText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -207,7 +214,7 @@
                     android:layout_height="3dp"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/material_drawer_shadow_top"
-                    app:layout_constraintBottom_toTopOf="@+id/test" />
+                    app:layout_constraintBottom_toTopOf="@+id/incidentText" />
 
             <View
                     android:id="@+id/view3"

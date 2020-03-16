@@ -55,7 +55,7 @@ class IncidentList : Fragment() {
             } else {
                 injector.visible(R.id.alertLayout)
                 val alertLayout = injector.findViewById<ConstraintLayout>(R.id.alertLayout)
-                alertLayout.backgroundColorResource = when (incident.alert?.severity) {
+                alertLayout.backgroundColorResource = when (incident.alert?.severity?.toUpperCase()) {
                     "HIGH" -> {
                         R.color.md_red_A700
                     }
