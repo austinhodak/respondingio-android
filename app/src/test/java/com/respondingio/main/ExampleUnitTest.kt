@@ -1,6 +1,7 @@
 package com.respondingio.main
 
 import com.respondingio.functions.utils.Time
+import com.respondingio.main.utils.Auth
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -11,7 +12,6 @@ import org.junit.Test
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-
 
     @Test
     fun addition_isCorrect() {
@@ -26,5 +26,10 @@ class ExampleUnitTest {
 
         val test2 = "TEST2"
         assertEquals("Times must match.", Time.getCurrentUTC(), System.currentTimeMillis() + 1)
+    }
+
+    @Test
+    fun checkUserLoggedIn () {
+        assertEquals(Auth.isUserLoggedIn(), false)
     }
 }

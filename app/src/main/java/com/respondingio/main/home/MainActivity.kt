@@ -88,7 +88,6 @@ class MainActivity : AppCompatActivity() {
     }
 
    private fun setupDrawer() {
-
        mDrawer = DrawerBuilder()
            .withActivity(this)
            .withToolbar(findViewById(R.id.toolbar_settings))

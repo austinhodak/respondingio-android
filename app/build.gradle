@@ -55,8 +55,6 @@ dependencies {
     testImplementation 'org.powermock:powermock-module-junit4:2.0.5'
     testImplementation 'org.powermock:powermock-api-mockito:1.7.4'
 
-
-
     androidTestImplementation 'androidx.test.ext:junit:1.1.2-alpha04'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha04'
 
@@ -75,6 +73,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'net.idik:slimadapter:2.1.2'
+
+    // TODO UPDATE TO NEW LIBRARY VERSION
     implementation 'com.afollestad.material-dialogs:core:2.7.0'
     implementation 'com.afollestad.material-dialogs:color:2.0.0'
 
@@ -86,9 +86,7 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
-    // For Kotlin use kapt instead of annotationProcessor
 
-    //implementation 'com.github.armcha:SpaceNavigationView:1.6.0'
     implementation 'com.google.android:flexbox:2.0.1'
     implementation 'androidx.cardview:cardview:1.0.0'
 

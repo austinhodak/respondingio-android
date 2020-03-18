@@ -58,7 +58,7 @@ class DashboardFragment : Fragment() {
             currentUser = it
             Log.d("USER", it.toString())
             Handler().postDelayed({
-                if (it.isUserResponding()) {
+                /*if (it.isUserResponding()) {
                     if (it.responding?.respondingToType == "UNAVAILABLE") {
                         space?.changeCenterButtonIcon(R.drawable.icons8_steering_wheel_100)
                     } else {
@@ -66,20 +66,25 @@ class DashboardFragment : Fragment() {
                     }
                 } else {
                     space?.changeCenterButtonIcon(R.drawable.icons8_steering_wheel_100)
-                }
+                }*/
+
+                space?.changeCenterButtonIcon(R.drawable.icons8_steering_wheel_100)
             }, 10)
         })
         mainViewModel.getRealtimeUserData(FirebaseAuth.getInstance().currentUser!!.uid)
 
         space?.setSpaceOnClickListener(object : SpaceOnClickListener {
             override fun onCentreButtonClick() {
-                if (!currentUser!!.isUserResponding() || currentUser!!.responding?.respondingToType == "UNAVAILABLE") {
+                val respondDialog = RespondDialog()
+                respondDialog.show(childFragmentManager.beginTransaction(), "RESPOND_DIALOG")
+
+                /*if (!currentUser!!.isUserResponding() || currentUser!!.responding?.respondingToType == "UNAVAILABLE") {
                     val respondDialog = RespondDialog()
                     respondDialog.show(childFragmentManager.beginTransaction(), "RESPOND_DIALOG")
                 } else {
                     //User is on scene
                     RespondingUtils.markUserOnScene(Auth.getUser()?.uid.toString())
-                }
+                }*/
             }
 
             override fun onItemReselected(itemIndex: Int, itemName: String?) {
